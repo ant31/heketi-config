@@ -1,0 +1,22 @@
+---
+apiVersion: v1
+kind: List
+items:
+- kind: Endpoints
+  apiVersion: v1
+  metadata:
+    name: heketi-storage-endpoints
+    creationTimestamp:
+  subsets:
+  - addresses:
+    - ip: {{ip_1}}
+    ports:
+    - port: 1
+  - addresses:
+    - ip: {{ip_2}}
+    ports:
+    - port: 1
+  - addresses:
+    - ip: {{ip_3}}
+    ports:
+    - port: 1

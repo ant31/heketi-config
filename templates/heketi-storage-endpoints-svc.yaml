@@ -1,0 +1,11 @@
+- kind: Service
+  apiVersion: v1
+  metadata:
+    name: heketi-storage-endpoints
+    creationTimestamp:
+  spec:
+    ports:
+    - port: 1
+      targetPort: 0
+  status:
+    loadBalancer: {}

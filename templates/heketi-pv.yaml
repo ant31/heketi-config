@@ -1,0 +1,17 @@
+---
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: heketidbstorage
+spec:
+  accessModes:
+  - ReadWriteMany
+  capacity:
+    storage: 4Gi
+  claimRef:
+    namespace: "{{namespace}}"
+    name: heketi
+  glusterfs:
+    endpoints: heketi-storage-endpoints.{{namespace}}.svc.{{cluster_name}}
+    path: heketidbstorage
+  persistentVolumeReclaimPolicy: Retain
